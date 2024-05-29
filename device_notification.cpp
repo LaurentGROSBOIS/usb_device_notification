@@ -97,7 +97,7 @@ private:
     IF_USING_PTHREADS(pthread_t monitor_thread);
 };
 
-DeviceNotificationImpl::DeviceNotificationImpl(DeviceNotification* the_parent) :
+DeviceNotification::DeviceNotificationImpl::DeviceNotificationImpl(DeviceNotification* the_parent) :
     hwnd(NULL),
     dev_notif(NULL),
     class_name("DeviceNotificationImpl"),
@@ -108,7 +108,7 @@ DeviceNotificationImpl::DeviceNotificationImpl(DeviceNotification* the_parent) :
     IF_USING_PTHREADS(monitor_thread = 0);
 }
 
-DeviceNotificationImpl::~DeviceNotificationImpl()
+DeviceNotification::DeviceNotificationImpl::~DeviceNotificationImpl()
 {
     cancel();
 }
